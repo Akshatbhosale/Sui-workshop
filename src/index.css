@@ -1,0 +1,248 @@
+/* index.css - Ultra Modern Upgrade */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Ultra Modern Color Palette */
+  --primary-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --primary-hover: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  --primary-active: linear-gradient(135deg, #4e60c6 0%, #5e377e 100%);
+  --primary-hover-shadow: #002d66;
+
+  --accent-color: #00d4ff;
+  --neon-blue: #00d4ff;
+  --neon-purple: #8b5cf6;
+  --neon-pink: #f472b6;
+  --neon-green: #10b981;
+
+  --connect-button-color: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --connect-button-hover: linear-gradient(135deg, #e082ea 0%, #e4465b 100%);
+  --connect-button-active: linear-gradient(135deg, #d071d9 0%, #d3354a 100%);
+  --connect-button-hover-shadow: #006bb3;
+
+  /* Ultra Modern Backgrounds */
+  --background-color: #0a0a0f;
+  --secondary-background: rgba(15, 15, 23, 0.95);
+  --sidebar-background: rgba(15, 15, 23, 0.95);
+  --card-background: rgba(255, 255, 255, 0.05);
+  --input-background: rgba(255, 255, 255, 0.05);
+
+  /* Advanced Text Colors */
+  --text-color: #ffffff;
+  --light-text-color: #a1a1aa;
+  --button-text-color: #ffffff;
+
+  --credit-color: var(--neon-green);
+  --debit-color: #ef4444;
+
+  /* Futuristic Borders & Effects */
+  --border-color: rgba(0, 212, 255, 0.3);
+  --dark-shadow: rgba(0, 0, 0, 0.5);
+  --neon-shadow: 0 0 50px rgba(0, 212, 255, 0.3);
+  --glass-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+  --disabled-background: rgba(255, 255, 255, 0.05);
+  --disabled-text: #6b7280;
+  --disabled-border: rgba(255, 255, 255, 0.1);
+  --disabled-shadow: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ultra Modern Body with Animated Background */
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animated Background Layers */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(0, 212, 255, 0.05) 0%, transparent 50%);
+  animation: backgroundShift 20s ease-in-out infinite;
+  z-index: -2;
+}
+
+/* Particle Container */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, var(--neon-blue), transparent),
+    radial-gradient(2px 2px at 40px 70px, var(--neon-purple), transparent),
+    radial-gradient(1px 1px at 90px 40px, var(--neon-pink), transparent),
+    radial-gradient(1px 1px at 130px 80px, var(--neon-green), transparent);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: particleFloat 15s linear infinite;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/* Ultra Modern Focus Outline */
+:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(0, 212, 255, 0.1);
+  border-radius: 8px;
+}
+
+/* Remove default button styles */
+button {
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  font-family: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Enhanced Wallet Status */
+.wallet-status-label,
+.wallet-status-address {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.wallet-status-address {
+  word-break: break-word;
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(0, 212, 255, 0.1);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.wallet-status-address:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+  border-color: var(--neon-blue);
+}
+
+/* Modern Connect Button Styling */
+.mysten_dapp-kit__connect-button {
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.mysten_dapp-kit__connect-button button {
+  width: 100%;
+  padding: 18px 40px !important;
+  background: var(--connect-button-color) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 50px !important;
+  color: white !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  box-shadow: var(--glass-shadow), 0 0 30px rgba(240, 147, 251, 0.3) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative;
+}
+
+.mysten_dapp-kit__connect-button button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.mysten_dapp-kit__connect-button button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: var(--glass-shadow), 0 0 50px rgba(240, 147, 251, 0.5) !important;
+}
+
+.mysten_dapp-kit__connect-button button:hover::before {
+  left: 100%;
+}
+
+/* Status Indicator */
+.wallet-status-label::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: var(--neon-green);
+  box-shadow: 0 0 20px var(--neon-green);
+  animation: statusBlink 2s ease-in-out infinite;
+}
+
+/* Keyframe Animations */
+@keyframes backgroundShift {
+  0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
+  25% { transform: translateX(-20px) translateY(-10px) rotate(1deg); }
+  50% { transform: translateX(20px) translateY(10px) rotate(-1deg); }
+  75% { transform: translateX(-10px) translateY(20px) rotate(0.5deg); }
+}
+
+@keyframes particleFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100vh); }
+}
+
+@keyframes statusBlink {
+  0%, 100% { opacity: 1; box-shadow: 0 0 20px var(--neon-green); }
+  50% { opacity: 0.6; box-shadow: 0 0 30px var(--neon-green); }
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.02); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.6); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body::after {
+    background-size: 150px 150px;
+  }
+  
+  .mysten_dapp-kit__connect-button button {
+    padding: 16px 32px !important;
+    font-size: 0.9rem !important;
+  }
+}

@@ -1,0 +1,399 @@
+/* App.css - Ultra Modern Upgrade */
+
+/* Ultra Modern Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: transparent;
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+  position: relative;
+}
+
+/* Futuristic Title with Holographic Effect */
+h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  margin-bottom: 50px;
+  text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+  animation: titlePulse 3s ease-in-out infinite;
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 2px;
+  animation: underlineGlow 2s ease-in-out infinite;
+}
+
+/* Ultra Modern Glassmorphism Card */
+.card {
+  background: var(--card-background);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    var(--neon-shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  animation: cardFloat 6s ease-in-out infinite;
+}
+
+/* Animated shimmer effect */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shimmer 3s infinite;
+}
+
+/* Glowing border animation */
+.card::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: var(--primary-color);
+  border-radius: 26px;
+  z-index: -1;
+  opacity: 0.6;
+  animation: borderGlow 4s ease-in-out infinite;
+}
+
+/* Enhanced Wallet Address */
+.wallet-address {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  color: var(--light-text-color);
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  padding: 16px 20px;
+  border-radius: 16px;
+  word-break: break-all;
+  position: relative;
+  transition: all 0.3s ease;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.wallet-address:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+  border-color: var(--neon-blue);
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Ultra Modern Input Groups */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--neon-purple);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.input-group label::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--neon-purple);
+  border-radius: 1px;
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Futuristic Input Fields */
+.input-group input[type="text"] {
+  width: 100%;
+  padding: 18px 24px;
+  background: var(--input-background);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.input-group input[type="text"]:focus {
+  outline: none;
+  border-color: var(--neon-blue);
+  box-shadow: 
+    0 0 0 4px rgba(0, 212, 255, 0.1),
+    0 10px 30px rgba(0, 212, 255, 0.2);
+  transform: translateY(-2px);
+  background: rgba(0, 212, 255, 0.05);
+}
+
+.input-group input[type="text"]::placeholder {
+  color: var(--light-text-color);
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.input-group input[type="text"]:disabled {
+  background-color: var(--disabled-background);
+  color: var(--disabled-text);
+  border-color: var(--disabled-border);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Enhanced Image Preview */
+.image-preview {
+  margin-top: 20px;
+  border: 2px dashed rgba(0, 212, 255, 0.3);
+  padding: 30px;
+  background: rgba(0, 212, 255, 0.05);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.image-preview:hover {
+  border-color: var(--neon-blue);
+  background: rgba(0, 212, 255, 0.1);
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.1);
+}
+
+.image-preview img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.image-preview img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Ultra Modern Buttons */
+button {
+  position: relative;
+  padding: 18px 40px;
+  background: var(--primary-color);
+  color: var(--button-text-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--glass-shadow), 0 0 30px rgba(102, 126, 234, 0.3);
+  width: 100%;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--glass-shadow), 0 0 50px rgba(102, 126, 234, 0.4);
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+button:active {
+  transform: translateY(-1px);
+  transition: transform 0.1s;
+}
+
+button:disabled {
+  background: var(--disabled-background);
+  color: var(--disabled-text);
+  border-color: var(--disabled-border);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+button:disabled::before {
+  display: none;
+}
+
+/* Special Connect Button Styling */
+.wallet-connect-button button {
+  background: var(--connect-button-color);
+  box-shadow: var(--glass-shadow), 0 0 30px rgba(240, 147, 251, 0.3);
+}
+
+.wallet-connect-button button:hover {
+  box-shadow: var(--glass-shadow), 0 0 50px rgba(240, 147, 251, 0.4);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+/* Ripple Effect for Buttons */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 15px;
+  }
+  
+  h1 {
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
+    margin-bottom: 40px;
+  }
+  
+  .card {
+    padding: 30px 25px;
+    gap: 25px;
+    border-radius: 20px;
+  }
+  
+  button {
+    padding: 16px 32px;
+    font-size: 0.9rem;
+  }
+  
+  .wallet-address {
+    font-size: 0.8rem;
+    padding: 14px 16px;
+  }
+  
+  .input-group input[type="text"] {
+    padding: 16px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .image-preview {
+    padding: 20px;
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 25px 20px;
+    gap: 20px;
+  }
+  
+  button {
+    padding: 14px 24px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Advanced Keyframe Animations */
+@keyframes titlePulse {
+  0%, 100% { 
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+    transform: scale(1);
+  }
+  50% { 
+    text-shadow: 0 0 50px rgba(139, 92, 246, 0.8);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes underlineGlow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    width: 100px;
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.8);
+    width: 150px;
+  }
+}
+
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0) rotateX(0); }
+  50% { transform: translateY(-10px) rotateX(2deg); }
+}
+
+@keyframes borderGlow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
